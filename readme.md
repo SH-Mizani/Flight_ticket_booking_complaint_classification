@@ -1,12 +1,12 @@
-# ✈️ Flight Ticket Booking Complaint Classification
+# Flight Ticket Booking Complaint Classification
 
 A Machine Learning project focused on automatically classifying airline customer complaints into predefined complaint categories using Natural Language Processing (NLP) techniques.
 
-> **Project Status:** 🚧 Work in Progress
+ Work in Progress
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 Customer complaints contain valuable information that can help airlines identify recurring issues and improve customer satisfaction.
 
@@ -14,7 +14,7 @@ The objective of this project is to build a text classification model capable of
 
 ---
 
-## 🎯 Complaint Categories
+## Complaint Categories
 
 The dataset is manually labeled using the following categories:
 
@@ -31,7 +31,7 @@ The dataset is manually labeled using the following categories:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 Flight_ticket_booking_complaint/
@@ -51,21 +51,16 @@ Flight_ticket_booking_complaint/
 
 ---
 
-## 🛠 Current Progress
+## Current Progress
 
-- ✅ Dataset collection
-- ✅ Complaint filtering
-- ✅ Manual data labeling
-- ✅ Labeling guideline creation
-- ⏳ Data preprocessing
-- ⏳ Exploratory Data Analysis (EDA)
-- ⏳ Feature Engineering
-- ⏳ Model Training
-- ⏳ Model Evaluation
+- Dataset collection
+- Complaint filtering
+- Manual data labeling
+- Labeling guideline creation
 
 ---
 
-## 🧰 Technologies
+## Technologies
 
 - Python
 - Pandas
@@ -76,7 +71,7 @@ Flight_ticket_booking_complaint/
 
 ---
 
-## 📈 Future Work
+## Future Work
 
 - Text preprocessing
 - TF-IDF feature extraction
@@ -84,16 +79,11 @@ Flight_ticket_booking_complaint/
 - Hyperparameter tuning
 - Performance comparison
 - Confusion Matrix & Classification Report
-- Model deployment (optional)
 
 ---
 
-## 🤝 Contributions
+## Contributions
 
 Suggestions and improvements are always welcome.
 
 ---
-
-## 📄 License
-
-This project is intended for educational and research purposes.
