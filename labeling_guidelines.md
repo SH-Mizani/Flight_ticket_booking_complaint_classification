@@ -2,13 +2,7 @@
 
 ## Overview
 
-This document describes the labeling strategy used for the Flight Ticket Booking Complaint Classification project.
-
-The objective is to classify each customer complaint into one and only one predefined category based on its primary issue.
-
-If a complaint contains multiple issues, the label should represent the customer's main concern.
-
----
+This document describes the labeling strategy used for the Flight Ticket Booking Complaint Classification project. The objective is to classify each customer complaint into one and only one predefined category based on its primary issue. If a complaint contains multiple issues, the label should represent the customer's main concern.
 
 # Label Categories
 
@@ -134,33 +128,21 @@ Complaints that do not clearly belong to any previous category.
 
 Each complaint receives only one label.
 
----
-
 ## Rule 2
 
 Choose the label representing the primary issue.
 
 Example
-
 Flight delayed and baggage lost.
-
 Primary complaint:
 Flight Delay
-
----
 
 ## Rule 3
 
 If the complaint mainly requests money back, use Refund even if other problems exist.
-
 Example
-
 My flight was cancelled and I still haven't received my refund.
-
-Label:
-Refund
-
----
+Label: Refund
 
 ## Rule 4
 
