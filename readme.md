@@ -8,30 +8,17 @@ A Machine Learning project for automatically classifying airline customer compla
 
 # Project Overview
 
-Customer complaints contain valuable information that helps airlines identify recurring service issues and improve customer satisfaction.
-
-The goal of this project is to develop a multi-class text classification model capable of predicting the primary category of an airline customer's complaint.
-
-Unlike sentiment analysis, this project focuses on identifying **what the customer is complaining about**, rather than whether the complaint is positive or negative.
+Customer complaints contain valuable information that helps airlines identify recurring service issues and improve customer satisfaction. The goal of this project is to develop a multi-class text classification model capable of predicting the primary category of an airline customer's complaint. Unlike sentiment analysis, this project focuses on identifying **what the customer is complaining about**, rather than whether the complaint is positive or negative.
 
 ---
 
 # Dataset
 
-The dataset consists of real airline customer reviews.
-
-Only reviews containing actual complaints are included in the final dataset.
-
-Each complaint belongs to **exactly one** complaint category.
-
-The raw dataset intentionally keeps the original **Title** and **Reviews** fields unchanged.
-
-During preprocessing, these fields are merged into a single input text using the following format:
+The dataset consists of real airline customer reviews. Only reviews containing actual complaints are included in the final dataset. Each complaint belongs to **exactly one** complaint category. The raw dataset intentionally keeps the original **Title** and **Reviews** fields unchanged. During preprocessing, these fields are merged into a single input text using the following format:
 
 ```
 Title + ". " + Reviews
 ```
-
 This preprocessing step is performed programmatically to ensure a clean and reproducible machine learning pipeline.
 
 ---
@@ -39,7 +26,6 @@ This preprocessing step is performed programmatically to ensure a clean and repr
 # Complaint Categories
 
 The dataset contains the following complaint categories:
-
 - Booking
 - Payment
 - Refund
@@ -72,9 +58,7 @@ Manual annotation was performed on an initial subset of complaints in order to:
 
 ### Phase 2
 
-The remaining complaints were automatically labeled using a rule-based weak supervision approach based on weighted keywords and handcrafted rules.
-
-Low-confidence samples were flagged for manual review.
+The remaining complaints were automatically labeled using a rule-based weak supervision approach based on weighted keywords and handcrafted rules. Low-confidence samples were flagged for manual review.
 
 ---
 

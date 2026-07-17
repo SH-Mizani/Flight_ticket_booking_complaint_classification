@@ -2,11 +2,7 @@
 
 ## Overview
 
-This document describes the annotation methodology used in the **Flight Ticket Booking Complaint Classification** project.
-
-The objective is to assign **one and only one complaint category** to each airline customer complaint based on the customer's primary issue.
-
-Although a complaint may mention multiple problems, only the **main complaint** should determine the final label.
+This document describes the annotation methodology used in the **Flight Ticket Booking Complaint Classification** project. The objective is to assign **one and only one complaint category** to each airline customer complaint based on the customer's primary issue. Although a complaint may mention multiple problems, only the **main complaint** should determine the final label.
 
 The annotation process combines **manual labeling** with **rule-based weak supervision** to efficiently construct a large-scale labeled dataset while maintaining annotation consistency.
 
@@ -18,9 +14,7 @@ The dataset was annotated using a hybrid annotation strategy consisting of two c
 
 ## Phase 1 – Manual Annotation
 
-An initial subset of complaints was manually reviewed and labeled.
-
-This stage was performed to:
+An initial subset of complaints was manually reviewed and labeled. This stage was performed to:
 
 - define clear annotation rules;
 - validate complaint categories;
@@ -34,15 +28,7 @@ These manually annotated samples serve as the reference for the automatic annota
 
 ## Phase 2 – Rule-Based Weak Supervision
 
-Weak supervision refers to automatically assigning labels using handcrafted rules instead of manual human annotation.
-
-After defining the annotation policy, the remaining unlabeled complaints were automatically labeled using a **rule-based weak supervision** approach.
-
-The automatic labeling system follows exactly the same complaint definitions and labeling rules described in this document.
-
-Low-confidence predictions are flagged for manual review.
-
-Automatically generated labels should be considered **silver labels** rather than manually verified ground truth.
+Weak supervision refers to automatically assigning labels using handcrafted rules instead of manual human annotation. After defining the annotation policy, the remaining unlabeled complaints were automatically labeled using a **rule-based weak supervision** approach. The automatic labeling system follows exactly the same complaint definitions and labeling rules described in this document. Low-confidence predictions are flagged for manual review. Automatically generated labels should be considered **silver labels** rather than manually verified ground truth.
 
 ---
 
@@ -195,7 +181,6 @@ Complaints that do not clearly belong to any predefined complaint category.
 ## Rule 1 — Single Label
 
 Each complaint must receive **exactly one** category.
-
 Multi-label annotation is not used in this project.
 
 ---
@@ -241,7 +226,6 @@ If the assigned label has low confidence or the complaint is ambiguous, it shoul
 # Automatic Labeling Method
 
 The automatic annotation system uses a **rule-based weak supervision** approach.
-
 For each unlabeled complaint:
 
 1. Generate the model input by combining the complaint title and review text.
@@ -258,7 +242,6 @@ This process enables scalable annotation while preserving consistency with the m
 ## Refund Priority Rule
 
 Refund-related complaints receive additional weighting whenever refund expressions appear together with unresolved reimbursement requests.
-
 Typical indicators include:
 
 - refund
@@ -269,7 +252,6 @@ Typical indicators include:
 - pending
 - denied
 - haven't received
-
 This rule follows **Rule 3** of the annotation policy.
 
 ---
@@ -307,20 +289,13 @@ Each automatically generated label includes an estimated confidence level.
 
 ## Label_Confidence
 
-A confidence score ranging from **0.0** to **1.0**.
-
-The score is calculated using the normalized difference between the highest-scoring category and the second-highest category.
-
-Higher values indicate stronger confidence in the assigned label.
-
-Manually annotated complaints receive a confidence score of **1.0**.
+A confidence score ranging from **0.0** to **1.0**. The score is calculated using the normalized difference between the highest-scoring category and the second-highest category. Higher values indicate stronger confidence in the assigned label. Manually annotated complaints receive a confidence score of **1.0**.
 
 ---
 
 ## Needs_Review
 
 A Boolean flag indicating whether manual verification is recommended.
-
 A complaint is marked as **Needs_Review = True** when:
 
 - the confidence score is low;
@@ -340,11 +315,7 @@ The final dataset combines manually verified annotations with automatically gene
 | Phase 1 | Manual Annotation |
 | Phase 2 | Rule-Based Weak Supervision |
 
-The manually labeled complaints remain unchanged throughout the annotation process.
-
-Automatically generated labels should be interpreted as **silver labels**, not manually verified ground truth.
-
-Before training or evaluating machine learning models, manually reviewing a representative subset of low-confidence samples is strongly recommended.
+The manually labeled complaints remain unchanged throughout the annotation process. Automatically generated labels should be interpreted as **silver labels**, not manually verified ground truth. Before training or evaluating machine learning models, manually reviewing a representative subset of low-confidence samples is strongly recommended.
 
 ---
 
@@ -381,10 +352,4 @@ Before training or evaluating machine learning models, manually reviewing a repr
 
 # Notes
 
-These guidelines were developed to ensure a consistent, transparent and reproducible annotation process for airline customer complaints.
-
-The combination of manual annotation and rule-based weak supervision enables efficient large-scale dataset creation while preserving annotation quality.
-
-Automatically generated labels should be regarded as **silver labels**, whereas manually reviewed annotations represent the highest-quality reference labels available in this project.
-
-Future versions of the dataset may incorporate additional manual verification or active learning strategies to further improve annotation quality.
+These guidelines were developed to ensure a consistent, transparent and reproducible annotation process for airline customer complaints. The combination of manual annotation and rule-based weak supervision enables efficient large-scale dataset creation while preserving annotation quality. Automatically generated labels should be regarded as **silver labels**, whereas manually reviewed annotations represent the highest-quality reference labels available in this project. Future versions of the dataset may incorporate additional manual verification or active learning strategies to further improve annotation quality.
