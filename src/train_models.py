@@ -23,11 +23,11 @@ from sklearn.metrics import (
 features_path = Path("data/processed/features.csv")
 results = Path("data/processed")
 models_path = Path("models")
-models_path.mkdir(parents=True, exist_ok=True)
+models_path.mkdir(parents = True, exist_ok = True)
 
 #Load features
 df = pd.read_csv(features_path)
-x = df.drop(columns=["Category"])
+x = df.drop(columns = ["Category"])
 y = df["Category"]
 
 print(f"Loaded features: {x.shape[0]} rows, {x.shape[1]} columns")
@@ -44,10 +44,37 @@ x_train, x_test, y_train, y_test = train_test_split(
 models = {
     "Logistic Regression": LogisticRegression(
         max_iter = 1000,
-        class_weight="balanced",
+        class_weight = "balanced",
     ),
     "Linear SVM": LinearSVC(
-        class_weight="balanced",
+        class_weight = "balanced",
         max_iter = 5000,
     ),}
 
+#Train and evaluate
+results = []
+trained_models = {}
+ 
+for name, model in models.items():
+    print(f"\nTraining: {name}")
+    model.fit(x_train, y_train)
+    y_pred = model.predict(x_test)
+ 
+    acc = accuracy_score(y_test, y_pred)
+    f1_weighted = f1_score(y_test, y_pred, average="weighted")
+ 
+    print(f"Accuracy:      {acc:.3f}")
+    print(f"Weighted F1:   {f1_weighted:.3f}")
+ 
+    results.append({
+        "Model": name,
+        "Accuracy": round(acc, 3),
+        "Weighted_F1": round(f1_weighted, 3),
+    })
+    trained_models[name] = model
+
+    #Save confusion matrix per model
+    cm = confusion_matrix(y_test, y_pred, labels = sorted(y.unique()))
+    cm_df = pd.DataFrame(cm, index = sorted(y.unique()), columns = sorted(y.unique()))
+    cm_df.to_csv(results / f"confusion_matrix_{name.replace(' ', '_').lower()}.csv")
+ 
