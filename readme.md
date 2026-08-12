@@ -4,13 +4,10 @@ A Machine Learning project for automatically classifying airline customer compla
 
 >  This project is currently under active development.
 
----
-
 # Project Overview
 
 Customer complaints contain valuable information that helps airlines identify recurring service issues and improve customer satisfaction. The goal of this project is to develop a multi-class text classification model capable of predicting the primary category of an airline customer's complaint. Unlike sentiment analysis, this project focuses on identifying **what the customer is complaining about**, rather than whether the complaint is positive or negative.
 
----
 
 # Dataset
 
@@ -20,8 +17,6 @@ The dataset consists of real airline customer reviews. Only reviews containing a
 Title + ". " + Reviews
 ```
 This preprocessing step is performed programmatically to ensure a clean and reproducible machine learning pipeline.
-
----
 
 # Complaint Categories
 
@@ -38,10 +33,7 @@ The dataset contains the following complaint categories:
 - Other
 
 Detailed annotation rules are available in:
-
 **labeling_guidelines.md**
-
----
 
 # Labeling Strategy
 
@@ -59,8 +51,6 @@ Manual annotation was performed on an initial subset of complaints in order to:
 ### Phase 2
 
 The remaining complaints were automatically labeled using a rule-based weak supervision approach based on weighted keywords and handcrafted rules. Low-confidence samples were flagged for manual review.
-
----
 
 # Project Structure
 
@@ -89,8 +79,6 @@ Flight_ticket_booking_complaint_classification/
 └── main.py
 ```
 
----
-
 # Machine Learning Pipeline
 
 ```
@@ -115,27 +103,16 @@ Model Training
 Evaluation
 ```
 
----
-
 # Current Progress
 
 ✅ Dataset collection
-
 ✅ Complaint filtering
-
 ✅ Manual annotation
-
 ✅ Rule-based automatic labeling
-
 ✅ Annotation guideline creation
-
 ✅ Text preprocessing
-
 ✅ Feature engineering
-
 ⬜ Model training
-
----
 
 # Technologies
 
@@ -146,8 +123,6 @@ Evaluation
 - Matplotlib
 
 Additional libraries may be introduced as the project evolves.
-
----
 
 # Future Work
 
@@ -161,16 +136,7 @@ Additional libraries may be introduced as the project evolves.
 - Model persistence
 - Prediction interface
 
----
-
 # License
 
 This project is intended for educational and research purposes.
-
 The original review data belongs to its respective source.
-
----
-
-# Contributions
-
-Suggestions, improvements and pull requests are always welcome.
