@@ -18,7 +18,7 @@ from pathlib import Path
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.utils.class_weight import compute_class_weight
-from sklearn.metrics import accuracy_score, f1_score, classification_report,
+from sklearn.metrics import accuracy_score, f1_score, classification_report
 
 from keras.models import Sequential
 from keras.layers import (
